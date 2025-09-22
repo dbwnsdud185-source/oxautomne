@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Example</title>
+</head>
+<body>
+    <h1 id="counter">counter : 0</h1>
+    <button id="incBtn">Inc</button>
+
+    <script>
+        // 초기값
+        let count = 0;
+
+        // 요소 선택
+        const counter = document.getElementById("counter");
+        const button = document.getElementById("incBtn");
+
+        // 버튼 클릭 이벤트
+        button.addEventListener("click", () => {
+            count++;
+            counter.textContent = "counter : " + count;
+        });
+    </script>
+</body>
+</html>
