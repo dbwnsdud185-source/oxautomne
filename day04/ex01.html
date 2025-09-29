@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>radio button sample</title>
+</head>
+<body>
+    <h1>radio button sample</h1>
+    <h3>과일</h3>
+    <div>
+        <input type="radio" name="group-1" value="사과" checked>사과
+    </div>
+    <div>
+        <input type="radio" name="group-1" value="포도">포도
+    </div>
+    <div>
+        <input type="radio" name="group-1" value="바나나">바나나
+    </div>
+<h3>아이돌</h3>
+    <div>
+        <input type="radio" name="group-2" value="에스파">에스파
+    </div>
+    <div>
+        <input type="radio" name="group-2" value="아일릿">아일릿
+    </div>
+    <div>
+        <input type="radio" name="group-2" value="뉴진스">뉴진스
+    </div>
+    <div>
+        <input type="radio" name="group-2" value="아이브">아이브
+    </div>
+        <button id="btn-select">확인</button>
+        <p>결과: 
+        <span id="output-result-1"></span>
+        </p>
+        <p>결과: 
+        <span id="output-result-2"></span>
+        </p>
+
+
+   <script>
+        var btnSelect = document.getElementById("btn-select");
+        var output1 = document.getElementById("output-result-1");
+        var output2 = document.getElementById("output-result-2");
+        
+        btnSelect.addEventListener("click", () => {
+          
+            var selectItem1 = document.querySelector("input[name=group-1]:checked");
+          
+            var selectItem2 = document.querySelector("input[name=group-2]:checked");
+
+            
+            console.log("group-1:", selectItem1?.value);
+            console.log("group-2:", selectItem2?.value);
+
+           
+            output1.innerText = selectItem1 ? selectItem1.value : "선택 안 됨";
+            output2.innerText = selectItem2 ? selectItem2.value : "선택 안 됨";
+        });
+    </script>
+    
+</body>
+</html>
