@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+</head>
+<body>
+  <h1>간단한 계산기</h1>
+  <input id="num1" type="number" /> +
+  <input id="num2" type="number" /> =
+  <input id="result" type="text" readonly />
+  <button id="btn-calc">계산</button>
+
+  <script>
+    const num1 = document.getElementById("num1");
+    const num2 = document.getElementById("num2");
+    const result = document.getElementById("result");
+    const btnCalc = document.getElementById("btn-calc");
+
+    btnCalc.addEventListener("click", () => {
+      const sum = parseInt(num1.value) + parseInt(num2.value);
+      result.value = sum;
+    });
+  </script>
+</body>
+</html>

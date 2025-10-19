@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter</title>
+</head>
+<body>
+  <h1 id="counter-output">counter : 0</h1>
+  <button id="btn-inc">증가</button>
+  <button id="btn-dec">감소</button>
+
+  <script>
+    var counter = 0;
+    var output = document.getElementById("counter-output");
+    var btnInc = document.getElementById("btn-inc");
+    var btnDec = document.getElementById("btn-dec");
+
+    btnInc.addEventListener("click", () => {
+      counter++;
+      output.textContent = "counter : " + counter;
+    });
+
+    btnDec.addEventListener("click", () => {
+      counter--;
+      output.textContent = "counter : " + counter;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>사칙연산 계산기</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input, select, button {
+      font-size: 18px;
+      margin: 5px;
+    }
+    #result {
+      font-weight: bold;
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <h1>사칙연산 계산기</h1>
+  
+  <input id="num1" type="number" placeholder="숫자1 입력" />
+  <select id="operator">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">×</option>
+    <option value="/">÷</option>
+  </select>
+  <input id="num2" type="number" placeholder="숫자2 입력" />
+  <button id="btn-calc">계산하기</button>
+
+  <p>결과: <span id="result">0</span></p>
+
+  <script>
+    const num1 = document.getElementById("num1");
+    const num2 = document.getElementById("num2");
+    const operator = document.getElementById("operator");
+    const btnCalc = document.getElementById("btn-calc");
+    const result = document.getElementById("result");
+
+    btnCalc.addEventListener("click", () => {
+      const a = parseFloat(num1.value);
+      const b = parseFloat(num2.value);
+      const op = operator.value;
+      let output;
+
+      if (isNaN(a) || isNaN(b)) {
+        result.textContent = "숫자를 모두 입력하세요!";
+        return;
+      }
+
+      switch (op) {
+        case "+": output = a + b; break;
+        case "-": output = a - b; break;
+        case "*": output = a * b; break;
+        case "/":
+          if (b === 0) {
+            result.textContent = "0으로 나눌 수 없습니다!";
+            return;
+          }
+          output = a / b;
+          break;
+        default:
+          output = "연산자 오류";
+      }
+
+      result.textContent = output;
+    });
+  </script>
+</body>
+</html>
