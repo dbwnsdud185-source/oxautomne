@@ -1,39 +1,58 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Counter</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        div {
+            text-align: center;
+        }
+        button {
+            margin: 5px;
+            font-size: 16px;
+            background-color: rgb(25, 147, 212);
+        }
+    </style>
 </head>
 <body>
-  <center>
-    <h1 id="counter-output">counter : 0</h1>
-    <button id="btn-inc">증가</button>
-    <button id="btn-dec">감소</button>
-    <button id="btn-reset">초기화</button>
-  </center>
+    
 
-  <script>
-    var counter = 0;
-    var output = document.getElementById("counter-output");
-    var btnInc = document.getElementById("btn-inc");
-    var btnDec = document.getElementById("btn-dec");
-    var btnReset = document.getElementById("btn-reset");
+    <h1 id="counter-output"> counter : 0</h1>
+    
 
-    btnInc.addEventListener("click", () => {
-      counter++;
-      output.textContent = "counter : " + counter;
-    });
+    <div>
+        <button id="btn-inc"> 증가 </button>
+        <button id="btn-dec"> 감소 </button>
+        <button id="btn-res"> 리셋 </button>
+    </div>
 
-    btnDec.addEventListener("click", () => {
-      counter--;
-      output.textContent = "counter : " + counter;
-    });
+    <script>
+        var Btninc = document.getElementById("btn-inc")
+        var Btndec = document.getElementById("btn-dec")
+        var Btnres = document.getElementById("btn-res")
+        var CounterOutput = document.getElementById("counter-output")
+        var counter = 0
 
-    btnReset.addEventListener("click", () => {
-      counter = 0;
-      output.textContent = "counter : " + counter;
-    });
-  </script>
+        Btninc.addEventListener('click',()=>{
+            counter = counter +1
+            CounterOutput.innerText = "counter : " + counter
+            console.log("counter" + counter)
+        })
+        Btndec.addEventListener('click',()=>{
+            counter = counter -1
+            CounterOutput.innerText = "counter : " + counter
+            console.log("counter" + counter)
+        })
+        Btnres.addEventListener('click',()=>{
+            counter = 0
+            CounterOutput.innerText = "counter : " + counter
+            console.log("counter" + counter)
+        })
+    </script>
+    
 </body>
 </html>
