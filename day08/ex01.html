@@ -6,10 +6,12 @@
   <title>Counter</title>
 </head>
 <body>
-  <h1 id="counter-output">counter : 0</h1>
-  <button id="btn-inc">증가</button>
-  <button id="btn-dec">감소</button>
-  <button id="btn-reset">초기화</button>
+  <center>
+    <h1 id="counter-output">counter : 0</h1>
+    <button id="btn-inc">증가</button>
+    <button id="btn-dec">감소</button>
+    <button id="btn-reset">초기화</button>
+  </center>
 
   <script>
     var counter = 0;
@@ -27,6 +29,7 @@
       counter--;
       output.textContent = "counter : " + counter;
     });
+
     btnReset.addEventListener("click", () => {
       counter = 0;
       output.textContent = "counter : " + counter;
