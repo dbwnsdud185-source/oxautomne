@@ -39,19 +39,22 @@ body {
 }
 
 
-.top-right,
+.top-right{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: white;
+    font-family: 'NexonLv1Gothic';
+
+}
 .bottom-left {
-    position: absolute;
-    font-size: 18px;
-    font-family: 'NexonLv1Gothic', sans-serif;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    font-size: 20px;
+    color: white;
+    font-family: 'NexonLv1Gothic';
 }
 
-.top-right {
-    top: 16px;
-    right: 24px;
-}
 
-.bottom-left {
-    bottom: 16px;
-    left: 24px;
-}
