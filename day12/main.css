@@ -1,0 +1,57 @@
+body {
+    display: flex;
+    background-color: blue;
+    margin: 0px;
+    padding: 0px;
+    color: white;
+    font-family: 'DosMyungjo';
+
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    position: relative; 
+}
+
+@font-face {
+    font-family: 'DosMyungjo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/DOSMyungjo.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'NexonLv1Gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Light.woff') format('woff');
+    font-weight: 300;
+    font-display: swap;
+}
+
+.big-text {
+    font-size: 64px;
+    margin: 24px;
+}
+
+.mid-text {
+    font-size: 32px;
+    margin: 24px;
+}
+
+
+.top-right,
+.bottom-left {
+    position: absolute;
+    font-size: 18px;
+    font-family: 'NexonLv1Gothic', sans-serif;
+}
+
+.top-right {
+    top: 16px;
+    right: 24px;
+}
+
+.bottom-left {
+    bottom: 16px;
+    left: 24px;
+}
