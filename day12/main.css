@@ -22,9 +22,9 @@ body {
 
 
 @font-face {
-    font-family: 'NexonLv1Gothic';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Light.woff') format('woff');
-    font-weight: 300;
+    font-family: 'DepartureMono';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2409-1@1.0/DepartureMono-Regular.woff2') format('woff2');
+    font-weight: normal;
     font-display: swap;
 }
 
@@ -45,7 +45,7 @@ body {
     right: 10px;
     font-size: 20px;
     color: white;
-    font-family: 'NexonLv1Gothic';
+    font-family: 'DepartureMono';
 
 }
 .bottom-left {
@@ -54,7 +54,7 @@ body {
     left: 10px;
     font-size: 20px;
     color: white;
-    font-family: 'NexonLv1Gothic';
+    font-family: 'DepartureMono';
 }
 
 
