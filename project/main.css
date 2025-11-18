@@ -1,0 +1,73 @@
+body {
+    display: flex;
+    background-color: rgb(255, 128, 0);
+    margin: 0px;
+    padding: 0px;
+    color: white;
+    font-family: 'GangwonEducationModuche';
+    flex-direction: column;
+    height: 100vh;
+     
+}
+
+@font-face {
+    font-family: 'GangwonEducationModuche';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFLightA.woff') format('woff');
+    font-weight: 300;
+    font-display: swap;
+}
+
+header {
+    display: flex;
+    padding: 16px;
+    /*background-color: yellow;
+    color: black;*/
+    justify-content: flex-end;
+    
+}
+
+footer {
+    display: flex;
+    padding: 16px;
+    /*background-color: black;
+    color: white;*/
+}
+main {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+.title {
+    font-size: 100px;
+    font-weight: bold;
+}
+
+.menu-item {
+    font-size: 40px;
+    font-weight: bold;
+}
+.menu-item {
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    margin: 14px 0;
+    transition: 0.1s;
+}
+
+/* 라디오 버튼 숨기기 */
+.menu-item input[type="radio"] {
+    display: none;
+}
+
+/* 선택된 메뉴 스타일 */
+.menu-item:has(input[type="radio"]:checked) {
+    color: yellow;
+    text-shadow: 0px 0px 8px white;
+}
+
+

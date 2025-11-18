@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('./main.css');
+    </style>
+</head>
+<body>
+
+    <header>
+        <div>version 1.0</div>
+    </header>
+
+    <main>
+    <div class="title"> 영포티 테스트 </div>
+
+    <label class="menu-item">
+        <input type="radio" name="menu" value="start" checked>
+        시작
+    </label>
+
+    <label class="menu-item">
+        <input type="radio" name="menu" value="load">
+        불러오기
+    </label>
+
+    <label class="menu-item">
+        <input type="radio" name="menu" value="option">
+        옵션
+    </label>
+</main>
+
+    
+    <footer>
+        <div>copyright jj.ac.kr</div>
+    </footer>
+    <script type="module">
+        import main from './index.js'
+        main();
+    </script>
+    
+</body>
+</html>
