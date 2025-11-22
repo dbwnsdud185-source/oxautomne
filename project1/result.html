@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>결과</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <main class="center">
+        <h1>당신의 결과는...</h1>
+        <h2 id="result-text"></h2>
+
+        <button onclick="location.href='index.html'" class="start-btn">
+            다시 테스트 하기
+        </button>
+    </main>
+
+    <script>
+        document.getElementById("result-text").innerText = 
+            localStorage.getItem("result") || "결과 없음";
+    </script>
+
+</body>
+</html>

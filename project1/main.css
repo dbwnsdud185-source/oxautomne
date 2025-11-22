@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    font-family: 'Malgun Gothic';
+    background: #ff8c00;
+    color: white;
+}
+
+.center {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.start-btn, .next-btn {
+    padding: 15px 30px;
+    background: white;
+    color: black;
+    border: none;
+    font-size: 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.quiz-container {
+    max-width: 500px;
+    margin: auto;
+    padding-top: 50px;
+}
+
+.option {
+    display: block;
+    font-size: 24px;
+    margin: 15px 0;
+    cursor: pointer;
+}
