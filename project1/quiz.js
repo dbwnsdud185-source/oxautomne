@@ -99,7 +99,7 @@ nextBtn.addEventListener("click", () => {
 
         if (totalScore >= 2) result = "사형";
         else if (totalScore >= 4) result = "무기징역";
-        else result = "정상";
+        else result = "생존";
 
         localStorage.setItem("result", result);
 
