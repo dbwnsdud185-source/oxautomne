@@ -1,0 +1,20 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "2025 2학기\r 웹프로그램 실습을 위한 저장소입니다.",
+  "homepage": "https://github.com/dbwnsdud185-source/oxautomne#readme",
+  "bugs": {
+    "url": "https://github.com/dbwnsdud185-source/oxautomne/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dbwnsdud185-source/oxautomne.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
