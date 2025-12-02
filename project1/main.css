@@ -1,8 +1,18 @@
 body {
     margin: 0;
-    font-family: 'Malgun Gothic';
+    font-family: 'YeogiOttaeJalnan';
     background: #ff8c00;
     color: white;
+    background-image: url(./young40.jpg), url(./young41.jpg);
+    background-size: 500px, 420px;
+    background-position: left, right;
+    background-repeat: no-repeat, no-repeat;
+}
+@font-face {
+    font-family: 'YeogiOttaeJalnan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
 }
 
 .center {
@@ -14,16 +24,17 @@ body {
 }
 
 .title {
-    font-size: 60px;
+    font-size: 100px;
     font-weight: bold;
 }
 
 .start-btn, .next-btn {
+    font-family: 'YeogiOttaeJalnan';
     padding: 15px 30px;
     background: white;
     color: black;
     border: none;
-    font-size: 24px;
+    font-size: 36px;
     border-radius: 10px;
     cursor: pointer;
     margin-top: 30px;
@@ -41,3 +52,4 @@ body {
     margin: 15px 0;
     cursor: pointer;
 }
+
