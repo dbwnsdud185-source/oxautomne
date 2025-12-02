@@ -61,24 +61,6 @@ body {
     margin-bottom: 40px;
 }
 
-/* 선택 버튼 스타일 */
-.choice-btn {
-    font-family: 'YeogiOttaeJalnan';
-    padding: 15px 30px;
-    background: white;
-    color: black;
-    border: none;
-    font-size: 28px;
-    border-radius: 10px;
-    cursor: pointer;
-    margin: 15px 0;
-    min-width: 400px;
-}
-
-.choice-btn:hover {
-    background: #ffe8cc;
-}
-
 /* 진행 바 (화면 상단 고정) */
 .progress {
     position: fixed;           /* 스크롤/내용과 상관없이 고정 */
@@ -131,4 +113,35 @@ h1 {
 
 @keyframes spin {
     to { transform: rotate(360deg); }
+}
+
+/* 선택지: 이미지 버튼 스타일 */
+.choice-btn {
+    font-family: 'YeogiOttaeJalnan';
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.choice-btn img {
+    width: 220px;   /* 이미지 크기 조절 */
+    height: auto;
+    border-radius: 16px;
+    border: 3px solid white;
+    display: block;
+}
+
+.choice-btn:hover img {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+.choice-label {
+    margin-top: 10px;
+    font-size: 24px;
+    color: white;
 }
