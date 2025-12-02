@@ -16,9 +16,21 @@
         </button>
     </main>
 
+    
     <script>
-        document.getElementById("result-text").innerText = 
-            localStorage.getItem("result") || "결과 없음";
+    const result = localStorage.getItem("result") || "결과 없음";
+    const resultText = document.getElementById("result-text");
+
+    resultText.innerText = result;
+
+    // 색상 변경
+    if (result === "사형") {
+        resultText.style.color = "red";
+    } else if (result === "무기징역") {
+        resultText.style.color = "green";
+    } else {
+        resultText.style.color = "blue";
+    }
     </script>
 
 </body>

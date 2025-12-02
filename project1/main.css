@@ -5,9 +5,10 @@ body {
     color: white;
     background-image: url(./young40.jpg), url(./young41.jpg);
     background-size: 500px, 420px;
-    background-position: left, right;
+    background-position: left center, right center; /* 두 이미지 세로 가운데 정렬 */
     background-repeat: no-repeat, no-repeat;
 }
+
 @font-face {
     font-family: 'YeogiOttaeJalnan';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
@@ -15,6 +16,7 @@ body {
     font-display: swap;
 }
 
+/* 공통 중앙 정렬 레이아웃 (첫 화면, 결과 화면에서 사용) */
 .center {
     height: 100vh;
     display: flex;
@@ -40,31 +42,93 @@ body {
     margin-top: 30px;
 }
 
+/* 문제 화면 레이아웃 */
 .quiz-container {
-    max-width: 500px;
-    margin: auto;
-    padding-top: 50px;
+    max-width: 600px;
+    margin: 0 auto;
+    height: 100vh;                 /* 화면 전체 높이 사용 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;       /* 세로 중앙 정렬 */
+    align-items: center;           /* 가로 중앙 정렬 */
+    text-align: center;
 }
 
-.option {
-    display: block;
-    font-size: 24px;
-    margin: 15px 0;
-    cursor: pointer;
+/* 문제 텍스트 크게 */
+#q-title {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 40px;
 }
+
+/* 선택 버튼 스타일 */
 .choice-btn {
     font-family: 'YeogiOttaeJalnan';
     padding: 15px 30px;
     background: white;
     color: black;
     border: none;
-    font-size: 36px;
+    font-size: 28px;
     border-radius: 10px;
     cursor: pointer;
-    margin-top: 30px;
+    margin: 15px 0;
+    min-width: 400px;
 }
 
 .choice-btn:hover {
     background: #ffe8cc;
 }
 
+/* 진행 바 (화면 상단 고정) */
+.progress {
+    position: fixed;           /* 스크롤/내용과 상관없이 고정 */
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 12px;
+    background-color: #f5f5f5;
+    border-radius: 999px;
+    overflow: hidden;
+    z-index: 10;
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: red;
+    border-radius: 999px;
+    transition: width 0.3s ease;
+}
+
+/* 결과 화면 글씨 크게 */
+h1 {
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+#result-text {
+    font-size: 80px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* 로딩 화면용 애니메이션 */
+.loading-title {
+    font-size: 60px;
+    margin-bottom: 30px;
+}
+
+.loader {
+    width: 80px;
+    height: 80px;
+    border: 8px solid rgba(255,255,255,0.4);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-top: 20px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
