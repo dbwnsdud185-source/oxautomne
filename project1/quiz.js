@@ -3,65 +3,57 @@ const quiz = [
     {
         q: "1) 당신의 출생년도는??",
         options: [
-            {
-                label: "1970~1990",
-                img: "img/grand.jpg",
-                score: 1
-            },
-            {
-                label: "1991~",
-                img: "img/child.jpg",
-                score: 0
-            }
+            { label: "1970~1990", img: "img/grand.jpg", score: 1 },
+            { label: "1991~",     img: "img/child.jpg", score: 0 }
         ]
     },
     {
         q: "2) 내가 갖고 싶은 자동차는??",
         options: [
             { label: "카니발 하이리무진", img: "img/carnival.jpg", score: 1 },
-            { label: "제네시스",           img: "img/genesis.avif",   score: 0 }
+            { label: "제네시스",           img: "img/genesis.avif", score: 0 }
         ]
     },
     {
         q: "3) 내가 갖고싶은 아이폰 색상은??",
         options: [
-            { label: "코스믹 오렌지",     img: "img/orange.jpg", score: 1 },
-            { label: "블랙 or 화이트",    img: "img/iphone.jpg",   score: 0 }
+            { label: "코스믹 오렌지",  img: "img/orange.jpg", score: 1 },
+            { label: "블랙 or 화이트", img: "img/iphone.jpg", score: 0 }
         ]
     },
     {
         q: "4) 만약, 러닝 또는 독서후에 당신의 행동은??",
         options: [
-            { label: "휴식",             img: "img/rest.jpg",             score: 0 },
-            { label: "인스타그램 업로드", img: "img/run.jpg", score: 1 }
+            { label: "휴식",             img: "img/rest.jpg", score: 0 },
+            { label: "인스타그램 업로드", img: "img/run.jpg",  score: 1 }
         ]
     },
     {
         q: "5) 오늘은 쇼핑하는 날! 내가 사고싶은 옷은??",
         options: [
             { label: "스투시, 슈프림, 스톤아일랜드", img: "img/street.png", score: 1 },
-            { label: "헤지스, 빈폴, 닥스",           img: "img/logo.jpg",       score: 0 }
+            { label: "헤지스, 빈폴, 닥스",           img: "img/logo.jpg",   score: 0 }
         ]
     },
     {
         q: "6) 젊은 직원이 어려움에 처했을때 나의 행동은??",
         options: [
-            { label: "힘들지? 그거.. 다 그런거야.", img: "img/todak.jpg", score: 1 },
-            { label: "와.. 이거 너무 스트레스네. 우리 일단 커피 한 잔 할까?", img: "img/coffee.jpg", score: 0 }
+            { label: "힘들지? 그거.. 다 그런거야.",             img: "img/todak.jpg",  score: 1 },
+            { label: "와.. 이거 너무 스트레스네. 우리 커피 한 잔?", img: "img/coffee.jpg", score: 0 }
         ]
     },
     {
         q: "7) 물놀이를 간다면 더 먹고 싶은것은??",
         options: [
             { label: "한방 능이 백숙", img: "img/chicken.jpg", score: 0 },
-            { label: "바베큐",         img: "img/bbq.jpg",              score: 1 }
+            { label: "바베큐",         img: "img/bbq.jpg",     score: 1 }
         ]
     },
     {
         q: "8) 더 편한 SNS소통 방식은??",
         options: [
             { label: "인스타그램 DM", img: "img/insta.jpg", score: 1 },
-            { label: "카카오톡",      img: "img/kakao.jpg",    score: 0 }
+            { label: "카카오톡",      img: "img/kakao.jpg", score: 0 }
         ]
     },
 ];
@@ -115,13 +107,17 @@ function loadQuestion() {
 }
 
 function showResult() {
-    let result = "";
-    if (totalScore >= 6)      result = "사형";
-    else if (totalScore >= 3) result = "무기징역";
-    else                      result = "혐의없음";
+    // 점수 → 단계 코드 (키 값만 저장)
+    let resultKey = "";
 
-    localStorage.setItem("result", result);
+    if (totalScore >= 6)      resultKey = "late";   // 말기
+    else if (totalScore >= 4) resultKey = "middle"; // 중기
+    else if (totalScore >= 2) resultKey = "early";  // 초기
+    else                      resultKey = "normal"; // 정상
 
+    localStorage.setItem("resultKey", resultKey);
+
+    // 진행 바 100% 채우기
     progressBar.style.width = "100%";
 
     // 로딩 화면

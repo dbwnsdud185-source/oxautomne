@@ -7,30 +7,93 @@
 </head>
 <body>
 
-    <main class="center">
-        <h1>당신의 결과는...</h1>
-        <h2 id="result-text"></h2>
+    <main class="center result-page">
+
+        <!-- 결과 이미지 -->
+        <img id="result-img" class="result-image" src="" alt="결과 이미지">
+
+        <!-- 고정 타이틀 -->
+        <h1 class="result-title">당신의 결과는...</h1>
+
+        <!-- 결과 내용(제목 + 설명) -->
+        <div id="result-text" class="result-text"></div>
 
         <button onclick="location.href='index.html'" class="start-btn">
             다시 테스트 하기
         </button>
     </main>
 
-    
     <script>
-    const result = localStorage.getItem("result") || "결과 없음";
-    const resultText = document.getElementById("result-text");
+        // quiz.js에서 저장한 키(late, middle, early, normal) 가져오기
+        const resultKey = localStorage.getItem("resultKey") || "normal";
 
-    resultText.innerText = result;
+        const resultBox = document.getElementById("result-text");
+        const resultImg  = document.getElementById("result-img");
 
-    // 색상 변경
-    if (result === "사형") {
-        resultText.style.color = "red";
-    } else if (result === "무기징역") {
-        resultText.style.color = "green";
-    } else {
-        resultText.style.color = "blue";
-    }
+        // 결과별 데이터 (제목 + 색 + 설명 + 이미지)
+        const resultData = {
+            late: {
+                title: "영포티 말기 (임종)",
+                color: "red",
+                img: "img/final.jpg",
+                desc: `
+                    심각한 영포티 증상입니다.<br>
+                    당신의 멘탈과 생활 패턴은 이미 40대를 훌쩍 넘어섰습니다.<br>
+                    브런치, 카페, 유튜브 튜토리얼, 무릎 통증, 커피 없으면 대화 불가능…<br>
+                    이 모든 걸 자연스럽게 즐기고 있다면 바로 당신.<br>
+                    지금 당장 젊음의 스파클링 충전이 필요합니다.<br>
+                    그러나… 이미 늦었을 가능성도 있습니다.
+                `
+            },
+            middle: {
+                title: "영포티 중기 (진행 중)",
+                color: "yellow",
+                img: "img/resurt.png",
+                desc: `
+                    영포티 바이브가 꽤나 진하게 배어있습니다.<br>
+                    젊은 감성과 40대 현실감이 절묘하게 공존하는 단계.<br>
+                    카페 가면 “디카페인”을 찾고, 운동은 하고 싶지만 쉬는 게 더 중요하고,<br>
+                    신제품은 궁금한데 결국 쓰는 건 늘 같고…<br>
+                    지금 돌아서면 아직 희망이 있습니다.<br>
+                    하지만 편해서 안 돌아서는 게 문제.
+                `
+            },
+            early: {
+                title: "영포티 초기 (초기 증상)",
+                color: "limegreen",
+                img: "img/start.jpg",
+                desc: `
+                    생활 패턴에 약간의 영포티 기운이 보입니다.<br>
+                    한 번쯤 “쉬자…”를 외쳤고, 커피가 삶의 필수품이 되어가고 있으며,<br>
+                    예전만큼 밤샘이 안 된다는 걸 깨달은 상태.<br>
+                    아직은 치료 가능!<br>
+                    주의 깊게 관리한다면 다시 젊은 에너지 회복 가능!
+                `
+            },
+            normal: {
+                title: "정상",
+                color: "deepskyblue",
+                img: "img/so.jpg",
+                desc: `
+                    지금은 정상 범주입니다.<br>
+                    당신은 여전히 젊고 생기 넘치며, 영포티 기운은 거의 없습니다.<br>
+                    하지만 방심은 금물!<br>
+                    브런치 맛있게 먹다가, 디카페인 마시다가, 무릎 한 번 아프기 시작하면<br>
+                    바로 영포티 초기로 넘어갈 수 있습니다.
+                `
+            }
+        };
+
+        const data = resultData[resultKey];
+
+        // 이미지 설정
+        resultImg.src = data.img;
+
+        // 제목 색깔 + 설명 출력
+        resultBox.innerHTML = `
+            <h2 style="color:${data.color}">${data.title}</h2>
+            <p>${data.desc}</p>
+        `;
     </script>
 
 </body>
