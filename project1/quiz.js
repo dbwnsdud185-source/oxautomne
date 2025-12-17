@@ -1,4 +1,4 @@
-// 문제 리스트
+
 const quiz = [
     {
         q: "1) 당신의 출생년도는??",
@@ -65,20 +65,20 @@ const qTitle      = document.getElementById("q-title");
 const optionsBox  = document.getElementById("options");
 const progressBar = document.getElementById("progress-bar");
 
-// 진행 바 업데이트
+
 function updateProgress() {
     const percent = (index / quiz.length) * 100;
     progressBar.style.width = `${percent}%`;
 }
 
-// 문제 출력
+
 function loadQuestion() {
     const q = quiz[index];
 
     qTitle.innerText = q.q;
     optionsBox.innerHTML = "";
 
-    // 선택지 버튼 + 이미지 생성
+    
     q.options.forEach((opt) => {
         optionsBox.innerHTML += `
             <button class="choice-btn" data-score="${opt.score}">
@@ -88,7 +88,7 @@ function loadQuestion() {
         `;
     });
 
-    // 버튼 클릭 이벤트 등록
+    
     document.querySelectorAll(".choice-btn").forEach(btn => {
         btn.addEventListener("click", () => {
             const score = Number(btn.dataset.score);
@@ -107,20 +107,20 @@ function loadQuestion() {
 }
 
 function showResult() {
-    // 점수 → 단계 코드 (키 값만 저장)
+    
     let resultKey = "";
 
-    if (totalScore >= 6)      resultKey = "late";   // 말기
-    else if (totalScore >= 4) resultKey = "middle"; // 중기
-    else if (totalScore >= 2) resultKey = "early";  // 초기
-    else                      resultKey = "normal"; // 정상
+    if (totalScore >= 6)      resultKey = "late";   
+    else if (totalScore >= 4) resultKey = "middle"; 
+    else if (totalScore >= 2) resultKey = "early";  
+    else                      resultKey = "normal"; 
 
     localStorage.setItem("resultKey", resultKey);
 
-    // 진행 바 100% 채우기
+    
     progressBar.style.width = "100%";
 
-    // 로딩 화면
+    
     document.body.innerHTML = `
         <main class="center">
             <h1 class="loading-title">결과 분석 중...</h1>
@@ -133,6 +133,6 @@ function showResult() {
     }, 2000);
 }
 
-// 처음 실행
+
 updateProgress();
 loadQuestion();
